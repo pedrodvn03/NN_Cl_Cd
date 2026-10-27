@@ -205,7 +205,7 @@ def process_aero_features(df_intermediate: pd.DataFrame, sample_rate_hz: float,
     c_radius = df['Turn_Radius'] > 100.0    # Era 500.0
     c_acc_lat = np.abs(lat_acc_col) < 0.45   # Era 0.15
     c_acc_long = np.abs(lon_acc_col) < 0.25  # Era 0.10 (MUY estricto)
-    c_throttle = throttle_col > 60.0         # Era 90.0
+    c_throttle = throttle_col > 70.0         # Era 90.0
     c_brake = brake_col < 0.5                # Era 2.0
     c_speed = df['GPS_Speed'] > 80.0        # Era 80.0
 

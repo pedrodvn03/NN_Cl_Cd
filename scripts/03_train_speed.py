@@ -230,7 +230,7 @@ def main():
     df_clean = load_dataset(args.track, args.session)
 
     has_wings = 'fw_angle_deg' in df_clean.columns and 'rw_angle_deg' in df_clean.columns
-    surrogate = AeroSurrogateWithSpeed(include_wings=has_wings)
+    surrogate = AeroSurrogateWithSpeed(include_wings=False)
 
     X_test, y_test = surrogate.fit_from_clean(df_clean)
 

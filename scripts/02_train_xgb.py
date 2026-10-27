@@ -69,7 +69,7 @@ class AeroSurrogateClean:
         df_ready = df_ready[
             (df_ready['Cl_Filtered'] > 0.0) & 
             (df_ready['Cl_Filtered'] < 2.0) &
-            (df_ready['RH_Front_Avg'] > 5) & 
+            (df_ready['RH_Front_Avg'] > 3) & 
             (df_ready['RH_Front_Avg'] < 60)
         ]
         
@@ -81,8 +81,8 @@ class AeroSurrogateClean:
             print(f"{'='*60}")
             
             # Binning con redondeo explícito
-            df_ready['RH_F_bin'] = (df_ready['RH_Front_Avg'] / 1.0).round(0) * 1.0
-            df_ready['RH_R_bin'] = (df_ready['RH_Rear_Avg'] / 1.0).round(0) * 1.0
+            df_ready['RH_F_bin'] = (df_ready['RH_Front_Avg'] / 0.5).round(0) * 0.5
+            df_ready['RH_R_bin'] = (df_ready['RH_Rear_Avg'] / 0.5).round(0) * 0.5
             
             # Debug: Ver bins únicos
             print(f"RH_F_bin - únicos: {df_ready['RH_F_bin'].nunique()}")
