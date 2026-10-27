@@ -1,0 +1,29 @@
+# === DATOS (NUNCA subir) ===
+data/raw/
+data/processed/
+*.csv
+!data/sessions_metadata.csv  # Excepción: este SÍ se sube
+
+# === MODELOS ENTRENADOS ===
+outputs/models/
+*.pkl
+*.joblib
+*.pt
+*.pth
+
+# === FIGURAS GENERADAS ===
+outputs/figures/
+outputs/tables/
+
+# === Python ===
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# === Visual Studio ===
+.vs/
+.vscode/
+
+# === Jupyter ===
+.ipynb_checkpoints/
